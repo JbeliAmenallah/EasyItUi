@@ -1,0 +1,37 @@
+<div class="col-4" style="margin-left: 500px;"> 
+  <div class="card" style="max-width: 450px; ">
+    <div class="card-body">
+      <form [formGroup]="taskDurationForm">
+        <div class="form-group" >
+    
+<label for="TotalDuration">Durée totale passée dans cette tâche :{{ formatDuration(totalDurationTest) }}</label>
+
+        </div>
+      </form>
+      <form [formGroup]="taskForm">
+       
+
+          <div class="form-group" *ngIf="visibleInputReason">
+            <label>Temps restant :  {{ formatDuration(remainingTimeTest )}}</label><br>
+            <label>Choisissez une raison d'arrêt :</label>
+            <select class="form-control" id="reasonForStop" formControlName="reasonForStop" required>
+              <option value="" disabled selected>Choisissez une raison d'arrêt</option>
+
+              <option value="terminer">Terminer</option>
+              <option value="pauseCafe">Pause café</option>
+              <option value="erreur">Erreur</option>
+              <!-- Ajoutez d'autres options selon vos besoins -->
+            </select>
+            <div *ngIf="taskForm.get('reasonForStop').hasError('required') && taskForm.get('reasonForStop').touched" class="text-danger">
+              La raison de l'arrêt est requise.
+            </div>
+          </div>
+          <!-- <label for="StartDate">Start Date : {{ stopwatch.startDate | date:'HH:mm:ss' }} </label> -->
+
+      </form>
+ 
+      <button type="button" class="btn btn-success" (click)="start()" [disabled]="disabledBtn">Démarrer</button>
+      <button type="button" class="btn btn-danger mt-2" (click)="stop()" [disabled]="!disabledBtn">Arrêter</button>
+     </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="card">
+<form [formGroup]="form">
+    <div class="createchform"> 
+        <div>
+            <div class="chose-groupe">
+                <div class="createchrow">
+                    <div>
+                        <label for="firstName">First Name:</label>
+                    </div>
+                    <div class="createchrow">
+                        <input type="text" pInputText formControlName="firstName" id="firstName"/>
+                        <small class="p-error" *ngIf="form.get('firstName')?.touched && form.get('firstName')?.hasError('required')">This field is required</small>
+                    </div>
+                </div>
+
+                <div class="createchrow">
+                    <div>
+                        <label for="lastName">Last Name:</label>
+                    </div>
+                    <div class="createchrow">
+                        <input type="text" pInputText formControlName="lastName" id="lastName"/>
+                        <small class="p-error" *ngIf="form.get('lastName')?.touched && form.get('lastName')?.hasError('required')">This field is required</small>
+                    </div>
+                </div>
+
+                <div class="createchrow">
+                    <div>
+                        <label for="phoneNumber">Phone Number:</label>
+                    </div>
+                    <div class="createchrow">
+                       <p-inputNumber inputId="phoneNumber" formControlName="phoneNumber" id="phoneNumber"></p-inputNumber>
+                        <small class="p-error" *ngIf="form.get('phoneNumber')?.touched && form.get('phoneNumber')?.hasError('required')">This field is required</small>
+                    </div>
+                </div>
+
+                <div class="createchrow">
+                    <div>
+                        <label for="email">Email:</label>
+                    </div>
+                    <div class="createchrow">
+                        <input type="email" pInputText formControlName="email" id="email"/>
+                        <small class="p-error" *ngIf="form.get('email')?.touched && form.get('email')?.hasError('required')">This field is required</small>
+                    </div>
+                </div>
+
+                <div class="createchrow">
+                    <div>
+                        <label for="address">Address:</label>
+                    </div>
+                    <div class="createchrow">
+                       <input type="text" pInputText formControlName="address" id="address"/>
+                        <small class="p-error" *ngIf="form.get('address')?.touched && form.get('address')?.hasError('required')">This field is required</small>
+                    </div>
+                </div>
+
+
+
+
+                <div class="createchrow">
+                    <div>
+                        <label for="position">Position:</label>
+                    </div>
+                    <div class="createchrow">
+                        <input type="text" pInputText formControlName="position" id="position"/>
+                        <small class="p-error" *ngIf="form.get('position')?.touched && form.get('position')?.hasError('required')">This field is required</small>
+                    </div>
+                </div>
+
+                <div class="createchrow">
+                    <div>
+                        <label for="role">Role:</label>
+                    </div>
+                    <div class="createchrow">
+                        <input type="text" pInputText formControlName="role" id="role"/>
+                        <small class="p-error" *ngIf="form.get('role')?.touched && form.get('role')?.hasError('required')">This field is required</small>
+                    </div>
+                </div>
+
+                <div class="createchrow">
+                    <div>
+                        <label for="hireDate">Hire Date:</label>
+                    </div>
+                    <div class="createchrow">
+                       <p-calendar formControlName="hireDate"></p-calendar>
+                        <small class="p-error" *ngIf="form.get('hireDate')?.touched && form.get('hireDate')?.hasError('required')">This field is required</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</div>

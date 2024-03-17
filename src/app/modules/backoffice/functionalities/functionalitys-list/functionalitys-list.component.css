@@ -1,0 +1,23 @@
+.editIcon:hover{
+    color: rgb(112, 112, 253);
+  }
+  .deleteIcon,.editIcon , .detaisIcon , .addRecource {
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 2px;
+  }
+  .deleteIcon:hover{
+    color: red;
+  }
+  h1.first-title-List {
+    font-family: roboto;
+    margin-bottom: 50px;
+    font-size: 3rem;
+  }
+  .addRecource:hover{
+color: rgb(71, 165, 53);
+  }
+  .detaisIcon:hover{
+    color: rgb(39, 39, 255);
+  }

@@ -1,0 +1,94 @@
+<div class="container mt-5">
+    <form [formGroup]="form" class="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="functionalityName">Functionality Name:</label>
+                    <input type="text" pInputText formControlName="functionalityName" id="functionalityName"
+                        placeholder="Enter the functionality name" class="form-control" />
+                    <div *ngIf="
+              form.get('functionalityName').hasError('required') &&
+              form.get('functionalityName').touched
+            " class="text-danger">
+                        Functionality name is required
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="projectId">Select a Project:</label>
+                    <select formControlName="projectId" id="projectId" class="form-control">
+                        <option disabled selected value="">Select a project</option>
+                        <option *ngFor="let project of projects" [value]="project.id">
+                            {{ project.projectName }}
+                        </option>
+                    </select>
+                    <div *ngIf="
+              form.get('projectId').hasError('required') &&
+              form.get('projectId').touched
+            " class="text-danger">
+                        project is required
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="priority">Priority:</label>
+                    <input type="number" formControlName="priority" id="priority" class="form-control"
+                        placeholder="Enter the duration" />
+                    <div *ngIf="
+              form.get('priority').hasError('required') &&
+              form.get('priority').touched
+            " class="text-danger">
+                        priority is required
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="complexityLevel">Complexity Level:</label>
+                    <select formControlName="complexityLevel" id="complexityLevel" class="form-control">
+                        <option disabled selected value="">Complexity Level</option>
+                        <option *ngFor="let option of complexityOptions" [value]="option">
+                            {{ option }}
+                        </option>
+                    </select>
+                    <div *ngIf="
+              form.get('complexityLevel').hasError('required') &&
+              form.get('complexityLevel').touched
+            " class="text-danger">
+                        Complexity level is required
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="status">Status:</label>
+                    <select formControlName="status" id="status" class="form-control">
+                        <option value="To Do">To Do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+                
+            </div>
+        </div>
+ 
+        
+        
+        <div class="form-group">
+            <label for="descriptionFunctionality">Functionality Description:</label>
+            <textarea rows="5" cols="30" pInputTextarea formControlName="descriptionFunctionality"
+                id="descriptionFunctionality" placeholder="Enter the description" class="form-control"></textarea>
+            <div *ngIf="
+          form.get('descriptionFunctionality').hasError('required') &&
+          form.get('descriptionFunctionality').touched
+        " class="text-danger">
+                Functionality description is required
+            </div>
+        </div>
+    </form>
+</div>

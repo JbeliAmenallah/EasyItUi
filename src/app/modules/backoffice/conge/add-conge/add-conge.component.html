@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2>Add Conge</h2>
+    <form (submit)="onSubmit()" #congeForm="ngForm">
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" class="form-control" [(ngModel)]="conge.startDate" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" class="form-control" [(ngModel)]="conge.endDate" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" class="form-control" [(ngModel)]="conge.state" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="contact">Contact ID:</label>
+        <input type="number" id="contact" name="contactId" class="form-control" [(ngModel)]="conge.contactId" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  

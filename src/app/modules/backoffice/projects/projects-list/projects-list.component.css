@@ -1,0 +1,38 @@
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .modifier, .supprimer {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+ 
+  .editIcon:hover{
+    color: rgb(112, 112, 253);
+  }
+  .deleteIcon,  .addRecource ,.editIcon{
+    color: black;
+    font-size: 29px;
+    cursor: pointer;
+    margin: 2px;
+  }
+  .deleteIcon:hover{
+    color: red;
+  }
+  .addRecource:hover{
+    color:green ;
+  }
